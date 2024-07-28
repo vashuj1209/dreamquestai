@@ -1,0 +1,12 @@
+openai tools fine_tunes.create -t dreamquest_data.jsonl
+import openai
+
+openai.api_key = 'your-api-key'
+
+response = openai.Completion.create(
+    model="dreamquest_model_id",
+    prompt="What are some good career options for someone interested in technology?\n\n",
+    max_tokens=150
+)
+
+print(response.choices[0].text.strip())
